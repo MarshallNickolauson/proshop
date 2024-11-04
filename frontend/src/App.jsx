@@ -2,14 +2,16 @@ import { Route, createBrowserRouter, createRoutesFromElements, RouterProvider } 
 import MainLayout from './layouts/MainLayout'
 import NotFoundPage from './screens/NotFoundPage';
 import HomePage from './screens/HomePage';
+import ProductPage from './screens/ProductPage';
 
 function App() {
 
   const router = createBrowserRouter(
     createRoutesFromElements(
       <Route path='/' element={<MainLayout />} >
-        <Route index element={<HomePage />} />
         <Route path='*' element={<NotFoundPage />} />
+        <Route index element={<HomePage />} />
+        <Route path='/product/:id' element={<ProductPage />} />
       </Route>
     )
   );
