@@ -6,7 +6,7 @@ import dotenv from 'dotenv';
 dotenv.config();
 const port = process.env.BACKEND_PORT || 5000;
 
-import products from './data/products.js';
+import productRoutes from './routes/productRoutes.js';
 
 connectDB();
 
@@ -21,14 +21,7 @@ app.use(express.urlencoded({ extended: false }));
 
 // app.use('/route', importedRoute)
 
-app.get('/api/products', (req, res) => {
-    res.json(products);
-});
-
-app.get('/api/products/:id', (req, res) => {
-    const product = products.find((p) => p._id === req.params.id);
-    res.json(product);
-});
+app.use('/api/products', productRoutes);
 
 app.use(errorHandler);
 
