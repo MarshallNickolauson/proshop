@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { Row, Col, Image, ListGroup, Card, Button } from "react-bootstrap";
 import Rating from "../components/Rating";
 import { useGetProductByIdQuery } from "../slices/productApiSlice";
+import Loader from "../components/Loader";
 
 const ProductPage = () => {
   const { id: productId } = useParams();
@@ -10,11 +11,11 @@ const ProductPage = () => {
   const { data: product, isLoading, error } = useGetProductByIdQuery(productId);
 
   if (isLoading) {
-    return <div>Loading...</div>;
+    return <Loader />;
   }
 
   if (error) {
-    return <div>Error: {error.message}</div>;
+    return <Message variant="error">{error}</Message>;
   }
 
   return (
