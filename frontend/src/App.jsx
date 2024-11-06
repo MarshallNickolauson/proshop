@@ -4,6 +4,7 @@ import NotFoundPage from './screens/NotFoundPage';
 import HomePage from './screens/HomePage';
 import ProductPage from './screens/ProductPage';
 import CartPage from './screens/CartPage';
+import LoginPage from './screens/LoginPage';
 
 function App() {
 
@@ -14,6 +15,7 @@ function App() {
         <Route index element={<HomePage />} />
         <Route path='/product/:id' element={<ProductPage />} />
         <Route path='/cart' element={<CartPage />} />
+        <Route path='/login' element={<LoginPage />} />
       </Route>
     )
   );
