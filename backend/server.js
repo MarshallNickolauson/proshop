@@ -7,6 +7,7 @@ dotenv.config();
 const port = process.env.BACKEND_PORT || 5000;
 
 import productRoutes from './routes/productRoutes.js';
+import userRoutes from './routes/userRoutes.js';
 
 connectDB();
 
@@ -19,9 +20,8 @@ if (process.env.NODE_ENV === 'development') {
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
-// app.use('/route', importedRoute)
-
 app.use('/api/products', productRoutes);
+app.use('/api/users', userRoutes);
 
 app.use(errorHandler);
 
