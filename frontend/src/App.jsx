@@ -13,6 +13,7 @@ import LoginPage from './screens/LoginPage';
 import RegisterPage from './screens/RegisterPage';
 import ShippingPage from './screens/ShippingPage';
 import PrivateRoutes from './components/PrivateRoutes';
+import PaymentPage from './screens/PaymentPage';
 
 function App() {
     const router = createBrowserRouter(
@@ -26,6 +27,7 @@ function App() {
                 <Route path='/register' element={<RegisterPage />} />
                 <Route path='' element={<PrivateRoutes />}>
                     <Route path='/shipping' element={<ShippingPage />} />
+                    <Route path='/payment' element={<PaymentPage />} />
                 </Route>
             </Route>
         )
