@@ -6,6 +6,7 @@ import ProductPage from './screens/ProductPage';
 import CartPage from './screens/CartPage';
 import LoginPage from './screens/LoginPage';
 import RegisterPage from './screens/RegisterPage';
+import ShippingPage from './screens/ShippingPage';
 
 function App() {
 
@@ -18,6 +19,7 @@ function App() {
         <Route path='/cart' element={<CartPage />} />
         <Route path='/login' element={<LoginPage />} />
         <Route path='/register' element={<RegisterPage />} />
+        <Route path='/shipping' element={<ShippingPage />} />
       </Route>
     )
   );
